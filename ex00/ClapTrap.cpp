@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:52:22 by amejia            #+#    #+#             */
-/*   Updated: 2023/06/25 23:33:10 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/26 19:15:50 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(): _name("hidden"), _hitPoints(10), _energyPoints(10),
 	if (_NbClapTrap < 100)
 		_created[_NbClapTrap] = this;
 	_NbClapTrap++;
-	std::cout << "Constructor Estandar" << std::endl;
+	std::cout << "ClapTrap Deployed" << std::endl;
 }
 
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string newname): _name(newname), _hitPoints(10),
 	if (_NbClapTrap < 100)
 		_created[_NbClapTrap] = this;
 	_NbClapTrap++;
-	std::cout << "Constructor Estandar" << std::endl;
+	std::cout << "ClapTrap Deployed" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
@@ -34,7 +34,7 @@ ClapTrap::~ClapTrap(){
 		if (_created[i] == this)
 			_created[i] = 0;
 	}
-	std::cout << "Destructor Estandar" << std::endl;
+	std::cout << "ClapTrap Destroyed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other): _name(other.getName()),
@@ -43,7 +43,7 @@ ClapTrap::ClapTrap(const ClapTrap &other): _name(other.getName()),
 	if (_NbClapTrap < 100)
 		_created[_NbClapTrap] = this;
 	_NbClapTrap++;
-	std::cout << "Constructor Copia" << std::endl;
+	std::cout << "ClapTrap Copied" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
@@ -53,7 +53,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 		this->_energyPoints = other.getEnergyPoints();
 		this->_attackDamage = other.getAttackDamage();
 	}
-	std::cout << "Constructor asignacion" << std::endl;
+	std::cout << "ClapTrap equalized" << std::endl;
 	return (*this);
 }
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.h                                         :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:23:10 by amejia            #+#    #+#             */
-/*   Updated: 2023/06/25 23:27:02 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/26 23:43:27 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ protected:
 	unsigned int		_energyPoints;
 	int					_attackDamage;
 	static int			_NbClapTrap;
-	static	ClapTrap	*_created[100];					
+	static	ClapTrap	*_created[100];
+	void	set_hp();
+	void	set_ep();
+	void	set_ad();					
 public:
 	ClapTrap();
 	~ClapTrap();

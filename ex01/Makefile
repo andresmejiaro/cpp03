@@ -6,13 +6,15 @@
 #    By: amejia <amejia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 17:23:35 by amejia            #+#    #+#              #
-#    Updated: 2023/06/25 21:15:16 by amejia           ###   ########.fr        #
+#    Updated: 2023/06/26 18:44:03 by amejia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = trap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
-SRCS = main.cpp ClapTrap.cpp
+NAME = trap
+NAME_DEBUG = debug
+
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -28,12 +30,17 @@ all: $(NAME)
 $(NAME): $(OBJS) 
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
+$(NAME_DEBUG): $(SRCS) 
+	$(CC) $(CFLAGS) $(SRCS) -o $@
+
+debug: $(NAME_DEBUG)
+
 clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(NAME_DEBUG)
 
 re: fclean all
 
-.PHONY = all clean fclean re
+.PHONY = all clean fclean debug re debug
